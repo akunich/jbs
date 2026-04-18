@@ -1,0 +1,23 @@
+<modification>
+	<id>fix-EmailHeadersFatalError</id>
+	<version>0.1.1</version>
+	<vqmver>0.1.1</vqmver>
+	<author>sasha181</author>
+
+	<file name="hosts/billing/comp/Tasks/Email.comp.php">
+		<operation>
+			<search position="replace">
+			<![CDATA[
+$Array = (IsSet($Attribs['Heads']) && SizeOf($Attribs['Heads']))?Explode("\n",$Attribs['Heads']):Array();
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+$Array = (IsSet($Attribs['Heads']) && SizeOf($Attribs['Heads']) && !is_array($Attribs['Heads']) )?Explode("\n",$Attribs['Heads']):Array();
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+</modification>

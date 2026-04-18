@@ -1,0 +1,26 @@
+<modification>
+	<id>fix-ServicesOrders-remove-delete-button</id>
+	<version>0.1</version>
+	<vqmver>0.1</vqmver>
+	<author>sasha181</author>
+
+	<file path="hosts/*/comp/Tables/Forms/" name="Delete.comp.php">
+		<operation>
+			<search position="replace">
+			<![CDATA[
+      if($Template['Source']['Count'] < 1)
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+      if($Template['Source']['Count'] < 1 || strpos($_SERVER['REQUEST_URI'], '/Administrator/')===false)
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+
+</modification>
+
+

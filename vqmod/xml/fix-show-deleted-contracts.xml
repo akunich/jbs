@@ -1,0 +1,39 @@
+<modification>
+	<id>fix-show-deleted-contracts</id>
+	<version>0.1</version>
+	<vqmver>0.1</vqmver>
+	<author>sasha181</author>
+
+	<file path="hosts/*/comp/www/" name="VPSOrder.comp.php,DomainOrder.comp.php,DSOrder.comp.php,ExtraIPOrder.comp.php,ServiceOrder.comp.php">
+		<operation>
+			<search position="replace">
+			<![CDATA[
+      $Contracts = DB_Select('Contracts',Array('ID','Customer'),Array('Where'=>SPrintF("`UserID` = %u AND `TypeID` != 'NaturalPartner' AND `IsHidden` = 'no'",$__USER['ID'])));
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+      $Contracts = DB_Select('Contracts',Array('ID','Customer'),Array('Where'=>SPrintF("`UserID` = %u AND `TypeID` != 'NaturalPartner' AND StatusID != 'Breaked' AND `IsHidden` = 'no'",$__USER['ID'])));
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+	<file path="hosts/*/comp/www/" name="HostingOrder.comp.php">
+		<operation>
+			<search position="replace">
+			<![CDATA[
+	  $Contracts = DB_Select('Contracts',Array('ID','Customer'),Array('Where'=>SPrintF("`UserID` = %u AND `TypeID` != 'NaturalPartner' AND `IsHidden` = 'no' AND `IsHidden` = 'no'",$__USER['ID'])));
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+	  $Contracts = DB_Select('Contracts',Array('ID','Customer'),Array('Where'=>SPrintF("`UserID` = %u AND `TypeID` != 'NaturalPartner' AND StatusID != 'Breaked' AND `IsHidden` = 'no' AND `IsHidden` = 'no'",$__USER['ID'])));
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+</modification>

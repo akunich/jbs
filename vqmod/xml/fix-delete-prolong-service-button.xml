@@ -1,0 +1,41 @@
+<modification>
+	<id>fix-delete-prolong-service-buttons</id>
+	<version>0.1</version>
+	<vqmver>0.1</vqmver>
+	<author>sasha181</author>
+
+	<file path="hosts/*/comp/www/" name="VPSOrders.comp.php,HostingOrders.comp.php,DSOrders.comp.php,ExtraIPOrders.comp.php,ServicesOrders.comp.php">
+		<operation>
+			<search position="replace" regex="true">
+			<![CDATA[
+      ~\$Comp = Comp_Load\('Buttons/Panel',Array\('Comp'=>\$Comp1,'Name'=>'Новый заказ'\),Array.*;~
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+      $Comp = Comp_Load('Buttons/Panel',Array('Comp'=>$Comp1,'Name'=>'Новый заказ'));
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+	<file name="hosts/hosting/comp/www/DomainOrders.comp.php">
+		<operation>
+			<search position="replace" regex="true">
+			<![CDATA[
+      ~\$Comp = Comp_Load\('Buttons/Panel',Array\('Comp'=>\$Comp1,'Name'=>'Новый заказ'\),Array.*;~
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+      $Comp = Comp_Load('Buttons/Panel',Array('Comp'=>$Comp1,'Name'=>'Новый заказ'),Array('Comp'=>$Comp3,'Name'=>'Перенос домена'));
+      ]]>
+			</add>
+		</operation>
+	</file>
+  
+
+</modification>
+
+

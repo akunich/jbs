@@ -1,0 +1,35 @@
+<modification>
+	<id>fixCaclulatePartnersReward</id>
+	<version>0.1</version>
+	<vqmver>0.1</vqmver>
+	<author>sasha181</author>
+
+	<file name="hosts/billing/comp/Tasks/CaclulatePartnersReward.comp.php">
+		<operation>
+			<search position="before">
+			<![CDATA[
+      $Result = DB_Query("CREATE TEMPORARY TABLE `UsrOwners`
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+      $Result = DB_Query("DROP TEMPORARY TABLE IF EXISTS `UsrOwners`");
+      ]]>
+			</add>
+		</operation>
+        
+		<operation>
+			<search  position="replace" >
+			<![CDATA[$IsSend = NotificationManager::sendMsg(new Message('PartnersReward',(integer)$Owner['DistinctOwnerID'],Array('Theme'=>$Theme,'Message'=>$MessageToUser,'Summ'=>SPrintF('%01.2f',$TotalSummToUser))));]]>
+			</search>
+			<add>
+			<![CDATA[
+      $IsSend = true;
+      ]]>
+			</add>
+		</operation>
+        
+	</file>
+
+
+</modification>

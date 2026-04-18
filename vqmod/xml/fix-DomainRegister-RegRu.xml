@@ -1,0 +1,26 @@
+<modification>
+	<id>fix-DomainRegister-RegRu</id>
+	<version>0.1</version>
+	<vqmver>0.1</vqmver>
+	<author>sasha181</author>
+
+	<file path="hosts/hosting/system/libs/" name="RegRu.php">
+		<operation>
+			<search position="replace">
+			<![CDATA[
+      $Query['p_addr']              = SPrintF('%s, %s, %s, %s %s, %s "%s"',$Person['pIndex'],$Person['pState'],$Person['pCity'],$Person['pType'],$Person['pAddress'],$Person['CompanyFormFull'],$Person['CompanyName']);
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+      $Query['p_addr']              = SPrintF('%s, %s, %s, %s %s, %s "%s"',$Person['pIndex'],$Person['pState'],$Person['pCity'],$Person['pType'],$Person['pAddress'],$Person['CompanyForm'],$Person['CompanyName']);
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+
+</modification>
+
+

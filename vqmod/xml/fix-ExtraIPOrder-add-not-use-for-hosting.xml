@@ -1,0 +1,23 @@
+<modification>
+	<id>fix-ExtraIPOrder-add-not-use-for-hosting</id>
+	<version>0.1</version>
+	<vqmver>0.1</vqmver>
+	<author>sasha181</author>
+
+	<file name="hosts/hosting/comp/www/ExtraIPOrder.comp.php">
+		<operation>
+			<search position="before">
+			<![CDATA[
+      foreach($HostingOrders as $HostingOrder){
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+      $Options = Array('Не использовать');
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+</modification>

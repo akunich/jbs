@@ -1,0 +1,23 @@
+<modification>
+	<id>fix-Sbarbank-expirationDate</id>
+	<version>0.1.2</version>
+	<vqmver>0.1.2</vqmver>
+	<author>sasha181</author>
+
+	<file name="hosts/billing/comp/www/Merchant/SberBank.comp.php">
+		<operation>
+			<search position="replace">
+			<![CDATA[
+$expirationDate = ($Config['Tasks']['Types']['GC']['Invoices']['DaysBeforeDeleted'] + $Config['Tasks']['Types']['GC']['Invoices']['DaysBeforeErase'] + 1) * 24 * 60 * 60 + Time();
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+$expirationDate = 3600 * 24 + Time();
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+</modification>

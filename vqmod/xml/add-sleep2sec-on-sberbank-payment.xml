@@ -1,0 +1,27 @@
+<modification>
+	<id>add-sleep2sec-on-sberbank-payment</id>
+	<version>0.1</version>
+	<vqmver>0.1</vqmver>
+	<author>akunich</author>
+
+	<file path="hosts/billing/comp/www/" name="Invoices.comp.php">
+		<operation>
+			<search position="before">
+			<![CDATA[
+      Eval(COMP_INIT);
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+$refData = parse_url(@$_SERVER['HTTP_REFERER']);
+if(@$_GET['orderId'] != "" || @$refData['host'] == 'securepayments.sberbank.ru' || @$refData['host'] == '3dsec.sberbank.ru') sleep(2);
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+
+</modification>
+
+

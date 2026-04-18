@@ -1,0 +1,26 @@
+<modification>
+	<id>fix-dont-delete-login-history</id>
+	<version>0.1</version>
+	<vqmver>0.1</vqmver>
+	<author>sasha181</author>
+
+	<file path="hosts/billing/comp/Tasks/GC/" name="CleanTables.comp.php">
+		<operation>
+			<search position="replace">
+			<![CDATA[
+      'Пользователь вошел в систему %',
+      ]]>
+			</search>
+			<add>
+			<![CDATA[
+      # 'Пользователь вошел в систему %',
+      ]]>
+			</add>
+		</operation>
+	</file>
+
+
+
+</modification>
+
+
