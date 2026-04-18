@@ -6,6 +6,9 @@ RewriteEngine On
 # tmp, for debug
 #RedirectPermanent      /API/Events     https://www.ya.ru/
 
+RewriteCond %{REMOTE_ADDR} !^91\.230\.54\.222
+RewriteRule ^UserRegister https://webguard.pro/registracziya-novogo-polzovatelya [R=301,L]
+
 <FilesMatch "\.(xml)$">
 	Order allow,deny
 	Deny from all
