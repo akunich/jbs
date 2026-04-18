@@ -9,3 +9,8 @@ hosts/joonte/tmp/logs
 hosts/joonte/tmp/
 vqmod/vqcache/
 vqmod/logs/
+deploy/
+develop/
+install/
+install.settings
+README.md
