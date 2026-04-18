@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- @author Бреславский А.В. (Joonte Ltd.) -->
+<XML>
+<!-- *********************************************************************** -->
+<Items>
+ <ListElement>
+  <Text>Главная</Text>
+  <Paths>
+   <UniqID>^\/Home$</UniqID>
+  </Paths>
+  <Href>/Home</Href>
+  <Level>1</Level>
+ </ListElement>
+ <ListElement>
+  <Text>Биллинговая система</Text>
+  <Prompt>Восстановление пароля от биллинговой системы, регистрация новых пользователей, вход в систему</Prompt>
+  <Paths>
+   <UniqID>^NULL$</UniqID>
+  </Paths>
+  <Href />
+  <Level>1</Level>
+ </ListElement>
+ <ListElement>
+  <Text>Вход в систему</Text>
+  <Prompt>Вход в биллинговую панель</Prompt>
+  <Paths>
+   <UniqID>^\/Logon$</UniqID>
+  </Paths>
+  <Href>/Logon</Href>
+  <Level>2</Level>
+ </ListElement>
+ <ListElement>
+  <Text>Восстановление пароля</Text>
+  <Prompt>Восстановление забытого пароля от биллинговой системы</Prompt>
+  <Paths>
+   <UniqID>^\/UserPasswordRestore$</UniqID>
+  </Paths>
+  <Href>/UserPasswordRestore</Href>
+  <Level>2</Level>
+ </ListElement>
+ <ListElement>
+  <Text>Регистрация</Text>
+  <Prompt>Регистрация нового пользователя в биллинговой системе</Prompt>
+  <Paths>
+   <UniqID>^\/UserRegister$</UniqID>
+  </Paths>
+  <Href>/UserRegister</Href>
+  <Level>2</Level>
+  <Pick />
+ </ListElement>
+</Items>
+<!-- *********************************************************************** -->
+</XML>

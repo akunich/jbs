@@ -1,0 +1,92 @@
+/* --------------------------------------------------------------------------------- top */
+/*.top {
+	height:108px;
+	display:inline-block;
+	clear:both;
+	width:1000px;
+	
+}
+*/
+.logo {
+	float:left;
+	margin:22px 0 0 17px;
+	
+}
+.slog {
+	margin:34px 0 0 71px;
+	float:left;
+	
+}
+.top-contacts {
+	float:right;
+	margin-top:14px;
+}
+.top-tel {
+	font-size:32px;
+	color: #5E626B;
+	background:url(https://webguard.pro/application/maxsite/templates/webguard/wg-images/ico-tel.png) left no-repeat;
+	padding-left:53px;
+	margin-top:5px;
+	height:32px;
+	line-height:30px;
+}
+.top-cont-box {
+	display:inline-block;
+	font-size: 13px;
+}
+.top-svaz {
+	background: url(https://webguard.pro/application/maxsite/templates/webguard/wg-images/ico-cons.png) left no-repeat;
+	height: 32px;
+	padding-left:43px;
+	line-height:22px;
+	float:left;
+	margin-right:10px;
+}
+.top-cons {
+	background: url(https://webguard.pro/application/maxsite/templates/webguard/wg-images/ico-svaz.png) left no-repeat;
+	height: 32px;
+	padding-left:43px;
+	line-height:22px;
+	float:left;
+}
+
+.PostProfile {
+    float: right;
+}
+
+
+.EdeskMessageContent {
+    min-height: 160px;
+    padding: 10px 0 0 5px;
+}
+
+/*
+#lhc_need_help_container {
+display:none;
+}
+*/
+
+/*
+ul.pp-showcases {
+    margin: 0 0 0px 10px;
+}
+
+ul.pp-showcases li, ul.pp-showcases li:hover {
+    width: 163px;
+    margin: 0 5px 5px 0;
+}
+
+
+
+
+ul.pp-showcases > li > div > img {
+    width: 150px !important;
+
+}
+
+ul.pp-showcases > li > div > div {
+    width: 160px !important;
+    margin:0 1px 0 2px !important;
+    
+}
+*/
